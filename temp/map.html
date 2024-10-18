@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+    
+</head>
+<style>
+    /* #map {
+        margin: 0 240px;
+    }
+
+    input {
+        width: 160px;
+        height: 160px;
+
+    }
+
+    #input-wrap {
+        display: flex;
+        width: 1000px;
+        margin: 0 240px;
+        gap: 10px
+    }
+
+    button {
+        width: 80px;
+        height: 40px;
+        margin: 0 240px;
+        gap :19px
+    }
+
+    #button-wrap {
+        
+    } */
+</style>
+<body>
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map" style="width:1000px;height:700px;"></div>
+</div>
+<!-- ------------------------------------------------------------------ -->
+<p>
+    <button onclick="zoomIn()">지도레벨 - 1</button>
+    <button onclick="zoomOut()">지도레벨 + 1</button>
+    <span id="maplevel"></span>
+</p>
+<!-- ------------------------------------------------------------------------------ -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8b985ef81aa2fedd1d6218ad2e03ecb"></script>
+<script>
+    
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+    
+    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption); 
+    
+    
+
+function setCenter() {            
+    // 이동할 위도 경도 위치를 생성합니다 
+    var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
+    
+    // 지도 중심을 이동 시킵니다
+    map.setCenter(moveLatLon);
+}
+
+function panTo() {
+    // 이동할 위도 경도 위치를 생성합니다 
+    var moveLatLon = new kakao.maps.LatLng(33.450580, 126.574942);
+    
+    // 지도 중심을 부드럽게 이동시킵니다
+    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+    map.panTo(moveLatLon);            
+}     
+
+
+// 지도 레벨을 표시합니다
+displayLevel();
+ 
+// 지도 레벨은 지도의 확대 수준을 의미합니다
+// 지도 레벨은 1부터 14레벨이 있으며 숫자가 작을수록 지도 확대 수준이 높습니다
+function zoomIn() {        
+    // 현재 지도의 레벨을 얻어옵니다
+    var level = map.getLevel();
+    
+    // 지도를 1레벨 내립니다 (지도가 확대됩니다)
+    map.setLevel(level - 1);
+    
+    // 지도 레벨을 표시합니다
+    displayLevel();
+}    
+
+function zoomOut() {    
+    // 현재 지도의 레벨을 얻어옵니다
+    var level = map.getLevel(); 
+    
+    // 지도를 1레벨 올립니다 (지도가 축소됩니다)
+    map.setLevel(level + 1);
+    
+    // 지도 레벨을 표시합니다
+    displayLevel(); 
+}    
+ 
+function displayLevel(){
+    var levelEl = document.getElementById('maplevel');
+    levelEl.innerHTML = '현재 지도 레벨은 ' + map.getLevel() + ' 레벨 입니다.';
+}
+</script>
+</body>
+</html>

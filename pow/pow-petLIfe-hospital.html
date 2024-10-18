@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pow-petLife-hospital.css">
+    <title>POWPOW</title>
+</head>
+<body>
+    <div id="find-id-wrap">
+        <div id="border">
+                <div id="nav">
+                  <div class="left">
+                      <img src="../images/logo.png" alt="로고">
+                  </div>
+                  <div class="right">
+                    <div class="icons">
+                      <img src="../images/serach.png" alt="검색">
+                      <img src="../images/truck.png" alt="배송">
+                      <img src="../images/jang.png" alt="카트">
+                    </div>
+                    <div class="sector">|</div>
+                    <div class="login"><p>로그인</p></div>
+                  </div>
+                </div>
+            <div class="category-wrap">
+                <div class="category">
+                  <ul>
+                    <li class="category-menu"><strong>마이홈</strong></li>          
+                    <li class="category-menu"><strong>스토어</strong></li>
+                    <li class="category-menu"><strong>펫라이프</strong></li>              
+                    <li class="category-menu"><strong>커뮤니티</strong></li>
+                  </ul>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-box"><img class ="dot-img" src="./img/search.png"></div>
+    <div class="button-category-wrap">
+      <button class="button-category">전체</button>
+      <button class="button-category">카페</button>
+      <button class="button-category">식당</button>
+      <button class="button-category">미용</button>
+      <button class="button-category">호텔</button>
+      <button class="button-category">유치원</button>
+      <button class="button-category">수영장</button>
+      <button class="button-category">운동장</button>
+      <button class="button-category">동물병원</button>
+    </div>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width:1000px;height:300px;"></div>
+    <!-- 할려다가 사라진거 -->
+    <!-- <ol class="rank">
+      <li>랭킹1</li>
+      <li>랭킹2</li>
+      <li>랭킹3</li>
+      <li>랭킹4</li>
+    </ol> -->
+    <div class="post-container">
+      <button class ="filter">필터</button>
+      <div class="filter-wrap">
+        <button>주말진료 가능</button>
+        <button>24시간 진료</button>
+        <button>초기화</button>
+        <button>적용</button>
+      </div>
+      <div class="post-head">
+        <p class="tag first-tag">병원☕</p>
+        <p class="seeMore">더보기></p>
+      </div>
+      <div class="post-wrap">
+      <div id="post"><img class= "img1" src="./img/dang1.png"><div class="h-wrap">
+                                                             <b>OOOOOOOOO카페</b>
+                                                             <h2>경기도 성남시 분당구</h2>
+                                                             <h2>운영 시간  13:00 ~ 20:00</h2>
+                                                             <h2>#카페 #디저트맛집 #자유 #애견</h2>
+      </div>
+        </div>
+      <div id="post"><img class= "img1" src="./img/dang1.png"><div class="h-wrap">
+        <b>OOOOOOOOO카페</b>
+        <h2>경기도 성남시 분당구</h2>
+        <h2>운영 시간  13:00 ~ 20:00</h2>
+        <h2>#카페 #디저트맛집 #자유 #애견</h2></div>
+      </div>
+        </div>
+    </div>
+    <div class="post-head">
+      <p class="tag">병원☕</p>
+      <p class="seeMore">더보기></p>
+    </div>
+      <div class="post-wrap">
+      <div id="post"><img class= "img1" src="./img/dang1.png"><div class="h-wrap">
+                                                             <b>OOOOOOOOO카페</b>
+                                                             <h2>경기도 성남시 분당구</h2>
+                                                             <h2>운영 시간  13:00 ~ 20:00</h2>
+                                                             <h2>#카페 #디저트맛집 #자유 #애견</h2>
+      </div>
+        </div>
+      <div id="post"><img class= "img1" src="./img/dang1.png"><div class="h-wrap">
+        <b>OOOOOOOOO카페</b>
+        <h2>경기도 성남시 분당구</h2>
+        <h2>운영 시간  13:00 ~ 20:00</h2>
+        <h2>#카페 #디저트맛집 #자유 #애견</h2></div>
+      </div>
+        </div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8b985ef81aa2fedd1d6218ad2e03ecb"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+</script>
+</html>
